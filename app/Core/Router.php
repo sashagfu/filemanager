@@ -16,7 +16,6 @@ class Router
 
 	protected $language;
 
-
 	public function getUri()
 	{
 		return $this->uri;
@@ -62,8 +61,6 @@ class Router
 		$path = $uriParts[0];
 
 		$pathParts = explode('/', $path);
-
-		// echo '<pre>'; print_r($pathParts);
 
 		if (count($pathParts)) {
 
