@@ -1,0 +1,7 @@
+.alert-success, .alert-danger {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  z-index: 1;
+}
