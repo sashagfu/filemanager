@@ -34,4 +34,22 @@ class Controller {
 
         date_default_timezone_set(getTimezoneName($this->tz->value));
 	}
+
+    /**
+     * Load view.
+     *
+     * @param string $path
+     * @param array $data
+     */
+    public function view($path, $data)
+    {
+        $pathParts = explode('.', $path);
+        $templatePath = implode(DS, $pathParts);
+        $viewObject = new View($data, VIEWS_PATH.DS.$templatePath.'.php');
+        $content = $viewObject->render();
+
+        $layoutPath = VIEWS_PATH.DS.'default.php';
+        $layoutViewObject = new View(compact('content'), $layoutPath);
+        echo $layoutViewObject->render();
+    }
 }
