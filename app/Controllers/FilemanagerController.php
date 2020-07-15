@@ -42,4 +42,22 @@ class FilemanagerController extends Controller
 
         $this->view('filemanager.show', $data);
     }
+
+    /**
+     * Show file content.
+     */
+    public function file()
+    {
+        $routerParams = App::getRouter()->getParams();
+
+        if ($routerParams) {
+            $folder_slug = $routerParams[0];
+            $path = base64_decode($routerParams[1]);
+        }
+
+        $data['folder_slug'] = $folder_slug;
+        $data['file'] = new File($path);
+
+        $this->view('filemanager.file', $data);
+    }
 }
