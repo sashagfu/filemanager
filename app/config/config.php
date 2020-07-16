@@ -6,7 +6,7 @@ Config::set('languages', ['en']);
 
 // Routes
 Config::set('routes', [
-	'default' => '',
+    'default' => '',
 ]);
 
 Config::set('default_route', 'filemanager');

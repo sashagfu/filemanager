@@ -2,11 +2,11 @@
 
 class View
 {
-	protected $data;
+    protected $data;
 
-	protected $path;
+    protected $path;
 
-	protected static function getDefaultViewPath()
+    protected static function getDefaultViewPath()
     {
         $router = App::getRouter();
         if (!$router) {
@@ -18,7 +18,7 @@ class View
         return VIEWS_PATH.DS.$controllerDir.DS.$templateName;
     }
 
-	public function __construct($data = [], $path = null)
+    public function __construct($data = [], $path = null)
     {
         if (!$path) {
             $path = self::getDefaultViewPath();
@@ -37,7 +37,7 @@ class View
         include($this->path);
 
         $content = ob_get_contents();
-        @ob_end_clean();
+        ob_end_clean();
 
         return $content;
     }

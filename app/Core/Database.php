@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 class Database {
-    
+
     private $dbh;
     private $stmt;
     private $error;
@@ -22,7 +22,7 @@ class Database {
             echo $this->error;
         }
     }
-    
+
     /**
      * Prepare statement with query.
      */
@@ -84,7 +84,7 @@ class Database {
     {
         $this->execute();
 
-        return $this->stmt->fetch(PDO::FETCH_OBJ);   
+        return $this->stmt->fetch(PDO::FETCH_OBJ);
     }
 
     /**
@@ -94,6 +94,6 @@ class Database {
      */
     public function count()
     {
-        return $this->stmt->rowCount();   
+        return $this->stmt->rowCount();
     }
 }

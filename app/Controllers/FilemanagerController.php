@@ -28,11 +28,11 @@ class FilemanagerController extends Controller
         $files = [];
 
         for ($i = 2; $i < count($items); $i++) {
-        	if (is_file($path.DS.$items[$i])) {
+            if (is_file($path.DS.$items[$i])) {
                 $files[] = new File($path.DS.$items[$i]);
-        	} else {
+            } else {
                 $folders[] = new Folder($path.DS.$items[$i]);
-        	}
+            }
         }
 
         $data['tz'] = $this->tz;
